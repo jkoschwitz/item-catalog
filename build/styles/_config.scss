@@ -1,0 +1,48 @@
+$blue: #306276;
+
+$colors: (
+  'blue': $blue,
+  'highlight': $blue,
+  'body': #666766,
+  'header': #282828
+);
+
+$page-width: 1000px;
+$mobile : 308px;
+$tablet : 720px;
+$desktop: 1000px;
+$em-base: 16px;
+$vw-base: $page-width;
+
+@mixin bp($min: 0, $max: 0) {
+  @if $min != 0 and $max != 0 {
+    // set both min and max
+    $query: '(min-width: #{$min}) and (max-width: #{$max})';
+  } @else if $min != 0 and $max == 0 {
+    // set just min
+    $query: '(min-width: #{$min})';
+  } @else if $min == 0 and $max != 0 {
+    // set just max
+    $query: '(max-width: #{$max})';
+  }
+
+  @media #{$query} { @content; }
+}
+
+@mixin inline ($width, $page-width: $page-width) {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  width: percent($width, $page-width);
+}
+
+@function percent($target, $container) {
+  @return ($target / $container) * 100%;
+}
+
+@function color($key) {
+  @if not map-has-key($colors, $key) {
+    @warn "Key `#{$key}` not found in $colors map.";
+  }
+  @return map-get($colors, $key);
+}

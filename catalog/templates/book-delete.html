@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  <h3>{{ book.title }}</h3>
+  <img width="75" src="{{book.thumbnail_url}}">
+
+  <form method=post>
+    <input type="hidden" name="_csrf_token" value="{{csrf_token()}}">
+    
+    <a href="{{url_for('book', book_id=book.id)}}">
+      <button type=button class="btn">Cancel</button>
+    </a>
+
+    <button type=submit class="btn">Delete book</button>
+  </form>
+
+{% endblock %}

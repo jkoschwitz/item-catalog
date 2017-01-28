@@ -1,0 +1,126 @@
+.body__content {
+  position: relative;
+}
+
+.main {
+  position: relative;
+  z-index: 999;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $page-width;
+  padding: 0 $spacing;
+  position: relative;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.nav {
+  background: color('blue');
+  color: #fff;
+  font-family: $font-nav;
+  margin-bottom: $spacing;
+  padding: $spacing 0;
+  position: relative;
+  z-index: 1000;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    color: inherit;
+    display: inline-block;
+    font-size: 15px;
+    text-decoration: none;
+    vertical-align: top;
+
+    &:hover {
+      color: #ddd;
+    }
+  }
+}
+
+.nav__list {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+
+    + li {
+      padding-left: $spacing;
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.article {
+  margin-bottom: $spacing--big;
+
+  @include bp(751px) {
+    @include inline(4, 6);
+    float: left;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.aside {
+  margin-bottom: $spacing--big;
+
+  @include bp(751px) {
+    @include inline(2, 6);
+    float: left;
+
+    .article + & {
+      padding-left: percent(35px, $page-width);
+    }
+  }
+
+  figure {
+    max-width: 350px;
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+.flash-messages {
+  border: 1px solid #ccc;
+  margin-bottom: $spacing;
+  padding: $spacing;
+
+  ul {
+    margin: 0;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.editable {
+  background: #eee;
+}
+
+.book {
+  margin-bottom: $spacing;
+}
+
+.book__cover {
+  box-shadow: 0 5px 5px -5px rgba(#000, .3);
+  display: block;
+  float: left;
+  margin-right: $spacing--small;
+  min-width: 75px;
+  width: 25%;
+}
+
+.book__info {
+  overflow: hidden;
+}

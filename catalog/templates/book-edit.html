@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  <form method=post id=course-form name="course-form" data-parsley-validate>
+
+    <fieldset>
+      <input type="hidden" name="_csrf_token" value="{{csrf_token()}}">
+
+      <label for=book_title>Book Title</label>
+      <input type=text
+             id=book_title
+             name=book_title
+             value="{{book.title}}"
+             placeholder="You Don't Know JS: Up &amp; Going"
+             required>
+    </fieldset>
+
+    <fieldset>
+      <label for=book_author>Author</label>
+      <input type=text
+             name=book_author
+             name=book_author
+             value="{{book.author}}"
+             placeholder="Kyle Simpson"
+             required>
+    </fieldset>
+
+    <fieldset>
+      <label for=book_isbn>ISBN</label>
+      <input type=text
+             name=book_isbn
+             name=book_isbn
+             value="{{book.isbn}}"
+             placeholder="978-1491924464"
+             required>
+    </fieldset>
+
+    <fieldset>
+      <label for=book_url>Link</label>
+      <input type=url
+             name=book_url
+             name=book_url
+             value="{{book.url}}"
+             placeholder="http://www.amazon.co.uk/You-Dont-Know-JS-Going/dp/1491924462/"
+             required>
+    </fieldset>
+
+    <fieldset>
+      <label for="book_category">Category</label>
+      <select name="book_category" required>
+        {% for category in category_list %}
+          <option value="{{category.id}}"
+                  {% if category.id == book.category_id %}selected{% endif %}
+                  >{{category.name}}</option>
+        {% endfor %}
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <label for=book_thumbnail_url>Thumbnail URL</label>
+      <input type=url
+             id=book_thumbnail_url
+             name=book_thumbnail_url
+             value="{{book.thumbnail_url}}"
+             placeholder="http://placekitten.com/g/300/300"
+             required>
+    </fieldset>
+
+    <fieldset>
+      <label for=book_published>Date Published</label>
+      <input type=date
+             id=book_published
+             name=book_published
+             value="{{book.publish_date}}"
+             required>
+    </fieldset>
+
+    <fieldset>
+      <label for=book_description>Course Description</label>
+      <textarea name=book_description
+                placeholder="Enter book description">{{book.description}}</textarea>
+    </fieldset>
+
+    <fieldset>
+      <button type="submit" class="btn">
+        {% if book.id %}
+          Save book
+        {% else %}
+          Add book
+        {% endif %}
+      </button>
+    </fieldset>
+  </form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.0.7/parsley.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.date.js"></script>
+  <script>
+    $('input[type=date]').pickadate({
+      format: 'yyyy-mm-dd',
+      formatSubmit: 'yyyy-mm-dd',
+      max: new Date(),
+      selectYears: 100,
+      selectMonths: true
+    });
+  </script>
+{% endblock %}

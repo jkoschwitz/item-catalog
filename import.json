@@ -1,0 +1,88 @@
+{
+  "category-list": [
+    {
+      "id": 1,
+      "name": "Python"
+    },
+    {
+      "id": 2,
+      "name": "Database"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript"
+    },
+    {
+      "id": 4,
+      "name": "HTML / CSS"
+    }
+  ],
+  "book-list": [
+    {
+      "id": 1,
+      "title": "Programming JavaScript Applications",
+      "author" : "Eric Elliott",
+      "url": "http://www.amazon.co.uk/gp/product/1491950293/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1491950293&linkCode=as2&tag=tutonics-21&linkId=7QM6WWYJWCSAPEHK",
+      "thumbnail_url": "http://akamaicovers.oreilly.com/images/0636920033141/lrg.jpg",
+      "isbn": "978-1491950296",
+      "description": "Take advantage of JavaScript’s power to build robust web-scale or enterprise applications that are easy to extend and maintain. By applying the design patterns outlined in this practical book, experienced JavaScript developers will learn how to write flexible and resilient code that’s easier—yes, easier—to work with as your code base grows.",
+      "publish_date": "2014-07-20",
+      "category_id": 3
+    },
+    {
+      "id": 2,
+      "title": "PostgreSQL Developer's Guide",
+      "author" : "Ibrar Ahmed, Asif Fayyaz, Amjad Shahzad",
+      "url": "http://www.amazon.co.uk/gp/product/1783989025/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1783989025&linkCode=as2&tag=tutonics-21&linkId=CG3EO6KRQIBRZBWB",
+      "thumbnail_url": "http://akamaicovers.oreilly.com/images/9781783989027/lrg.jpg",
+      "isbn": "978-1783989027",
+      "description": "Design, develop, and implement streamlined databases with PostgreSQL",
+      "publish_date": "2015-02-27",
+      "category_id": 2
+    },
+    {
+      "id": 3,
+      "title": "You Don't Know JS: Scope & Closures",
+      "author" : "Kyle Simpson",
+      "url": "http://www.amazon.co.uk/gp/product/1449335586/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1449335586&linkCode=as2&tag=tutonics-21&linkId=SJ46CVH7SR6JZVUM",
+      "thumbnail_url": "http://akamaicovers.oreilly.com/images/0636920026327/lrg.jpg",
+      "isbn": "978-1449335588",
+      "description": "No matter how much experience you have with JavaScript, odds are you don’t fully understand the language. This concise yet in-depth guide takes you inside scope and closures, two core concepts you need to know to become a more efficient and effective JavaScript programmer. You’ll learn how and why they work, and how an understanding of closures can be a powerful part of your development skillset",
+      "publish_date": "2014-03-24",
+      "category_id": 3
+    },
+    {
+      "id": 4,
+      "title": "Programming Python",
+      "author" : "Mark Lutz",
+      "url": "http://www.amazon.co.uk/gp/product/0596158106/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=0596158106&linkCode=as2&tag=tutonics-21&linkId=JN2YYBFYMQUKHTIN",
+      "thumbnail_url": "http://ecx.images-amazon.com/images/I/51s2wyjp9GL._SX258_BO1,204,203,200_.jpg",
+      "isbn": "978-0596158101",
+      "description": "If you've mastered Python's fundamentals, you're ready to start using it to get real work done. Programming Python will show you how, with in-depth tutorials on the language's primary application domains: system administration, GUIs, and the Web. You'll also explore how Python is used in databases, networking, front-end scripting layers, text processing, and more. This book focuses on commonly used tools and libraries to give you a comprehensive understanding of Python’s many roles in practical, real-world programming.",
+      "publish_date": "2011-01-10",
+      "category_id": 1
+    },
+    {
+      "id": 5,
+      "title": "CSS Secrets: Better Solutions to Everyday Web Design Problems",
+      "author" : "Lea Verou",
+      "url": "http://www.amazon.co.uk/gp/product/1449372635/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1449372635&linkCode=as2&tag=tutonics-21&linkId=NSL5EKYDGFKWV5AN",
+      "thumbnail_url": "http://demosthenes.info/assets/images/css-secrets-cover-1x.png.pagespeed.ce.ITg3CF-oMH.png",
+      "isbn": "978-1449372637",
+      "description": "In this practical guide, CSS expert Lea Verou provides 47 undocumented techniques and tips to help intermediate-to advanced CSS developers devise elegant solutions to a wide range of everyday web design problems. Rather than focus on design, CSS Secrets shows you how to solve problems with code. You'll learn how to apply Lea's analytical approach to practically every CSS problem you face to attain DRY, maintainable, flexible, lightweight, and standards-compliant results.",
+      "publish_date": "2015-07-03",
+      "category_id": 4
+    },
+    {
+      "id": 6,
+      "title": "High Performance Python: Practical Performant Programming for Humans",
+      "author": "Micha Gorelick",
+      "url": "http://www.amazon.co.uk/gp/product/1449361595/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1449361595&linkCode=as2&tag=tutonics-21&linkId=IYPRBK56SLXMP7VK",
+      "thumbnail_url": "http://ecx.images-amazon.com/images/I/519AlewXdrL._SX258_BO1,204,203,200_.jpg",
+      "isbn": "978-1449361594",
+      "description": "Your Python code may run correctly, but you need it to run faster. By exploring the fundamental theory behind design choices, this practical guide helps you gain a deeper understanding of Python's implementation. You'll learn how to locate performance bottlenecks and significantly speed up your code in high-data-volume programs.",
+      "publish_date": "2014-09-20",
+      "category_id": 1
+    }
+  ]
+}

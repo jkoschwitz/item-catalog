@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="root" lang=en>
+<head>
+  <title>Web Dev Reading Catalog</title>
+  <meta charset=utf-8>
+  <meta name=description content="Web Dev Reading Catalog">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel=stylesheet href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Corben'>
+  <link rel=stylesheet href="{{url_for('static', filename='style.css')}}">
+</head>
+<body class="body">
+  <div class="body__content cf">
+
+    <header class="header cf">
+      <nav class="nav">
+        <div class="container">
+          <a href="{{url_for('index')}}">Reading Catalog</a>
+          <ul class="nav__list">
+            {% if g.authenticated() %}
+              <li><a href="#">Logged in as {{g.user.username}}</a></li>
+              <li><a href="{{url_for('signout')}}">Logout</a></li>
+            {% else %}
+              <li><a href="{{url_for('signin')}}">Login with GitHub</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="container">
+          <div class="flash-messages">
+            <ul>
+            {% for message in messages %}
+              <li><strong>{{message}}</strong></li>
+            {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block intro %}{% endblock %}
+
+    <main class="main cf" role=main>
+      <div class="container cf">
+        <article class="article">
+          <div class="content">
+            {% block content %}{% endblock %}
+          </div>
+        </article>
+        <aside class="aside">
+          <div class="content">
+            {% block aside %}{% endblock %}
+          </div>
+        </aside>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+$font-body: 'Source Sans Pro', sans-serif;
+$font-header: 'Corben', $font-body;
+$font-nav: $font-body;
+
+$header-tags: 'h1, .h1, h2, .h2, h3, .h3';
+$form-tags: 'input, select, textarea, button';
+$content-tags: 'p, ul, ol, dl, address, blockquote, pre, table';
+
+$desktop-font-size: 16px;
+$desktop-line-height: (22px/$desktop-font-size);
+
+$spacing: #{$desktop-line-height}rem;
+$spacing--small: #{$desktop-line-height / 2}rem;
+$spacing--big: #{$desktop-line-height * 3}rem;
+
+.root {
+  color: color('body');
+  font-family: $font-body;
+  font-size: $desktop-font-size;
+  line-height: $desktop-line-height;
+}
+
+#{$header-tags},
+#{$form-tags},
+#{$content-tags},
+figure, hr {
+  margin-bottom: $spacing;
+}
+
+#{$header-tags} {
+  color: inherit;
+  font-family: $font-header;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+    font-size: inherit;
+  }
+}
+
+#{$content-tags}, label, .content {
+  color: inherit;
+  font-family: inherit;
+  font-size: $desktop-font-size;
+  font-weight: 300;
+  line-height: $desktop-line-height;
+  white-space: normal;
+}
+
+%h1, .h1 {
+  font-size: 26px;
+
+  @include bp(751px) {
+    font-size: 36px;
+  }
+}
+
+%h2, .h2 {
+  font-size: 22px;
+
+  @include bp(751px) {
+    font-size: 28px;
+  }
+}
+
+%h3, .h3 {
+  font-size: 16px;
+
+  @include bp(751px) {
+    font-size: 20px;
+  }
+}
+
+
+a {
+  color: color('blue');
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    text-decoration: inherit;
+  }
+}
+
+.main {
+
+  h1 { @extend %h1; }
+
+  h2 { @extend %h2; }
+
+  h3 { @extend %h3; }
+
+  li {
+    &:nth-last-of-type(n+2) {
+      padding-bottom: $spacing--small;
+    }
+  }
+
+  p > a:not([class]) {
+    text-decoration: underline;
+
+    &:hover {
+      opacity: .75;
+    }
+  }
+}

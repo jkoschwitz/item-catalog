@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ title }}</h1>
+
+  <ul>
+    <li><strong>Author: </strong> {{book.author}}</li>
+    <li><strong>Published: </strong> {{book.publish_date}}</li>
+    <li><strong>ISBN: </strong> {{book.isbn}}</li>
+    <li><strong>Category: </strong> {{book.category.name}}</li>
+  </ul>
+
+  <a target=blank href="{{book.url}}">
+    <button type="button" class="btn">Buy Book</button>
+  </a>
+
+  <h3>Description</h3>
+  <div>{{book.description}}</div>
+{% endblock %}
+
+
+{% block aside %}
+  {% if g.authenticated() and g.can_edit(book) %}
+  <a href="{{url_for('edit_book', book_id=book.id)}}">
+    <button type=button class="btn">Edit</button></a>
+  <a href="{{url_for('delete_book', book_id=book.id)}}">
+    <button type=button class="btn">Delete</button></a>
+  {% endif %}
+
+  <figure>
+    <img width="100%" src="{{book.thumbnail_url}}" alt="{{book.title}}">
+  </figure>
+{% endblock %}

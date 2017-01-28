@@ -1,0 +1,17 @@
+{
+  "name": "Full-Stack-Developer-(Project-3)",
+  "version": "1.0.0",
+  "engines": {
+    "node": "0.12"
+  },
+  "dependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-plumber": "*",
+    "gulp-sass": "*",
+    "gulp-util": "*"
+  },
+  "license": "ISC",
+  "main": "gulpfile.js",
+  "private": true
+}

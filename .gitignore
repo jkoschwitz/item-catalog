@@ -1,0 +1,5 @@
+*.pyc
+*.vagrant
+node_modules
+.DS_Store
+catalog.db
